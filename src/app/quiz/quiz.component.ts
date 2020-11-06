@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Problem } from '../model.problem';
 import { ProblemService } from '../problem.service';
 
@@ -9,7 +10,7 @@ import { ProblemService } from '../problem.service';
 })
 export class QuizComponent implements OnInit {
 
-  constructor(private problemService:ProblemService) { }
+  constructor(private problemService:ProblemService, private router:Router, private route: ActivatedRoute) { }
 
   problems: Problem[]
 
@@ -26,6 +27,7 @@ export class QuizComponent implements OnInit {
           correct++;
       }
     }
-    console.log(correct + "/10  correct!")  
+    console.log(correct + "/10  correct!")
+    this.router.navigate(["/result"], { relativeTo: this.route });
   }
 }

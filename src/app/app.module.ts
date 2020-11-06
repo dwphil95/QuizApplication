@@ -5,10 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { QuizComponent } from './quiz/quiz.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ResultComponent } from './result/result.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
-    QuizComponent
+    QuizComponent,
+    ResultComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -18,6 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [QuizComponent]
+  bootstrap: [MainComponent]
 })
 export class AppModule { }
