@@ -1,5 +1,16 @@
 body {
     text-align: center;
+    font-family: 'Signika', sans-serif;
+}
+
+h1 {
+    font-family: 'Signika', sans-serif;
+    font-size: 50px;
+}
+
+.container {
+    background-color: gainsboro;
+    padding-bottom: 20px;
 }
 
 .jumbotron {
@@ -7,10 +18,17 @@ body {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px
+    margin-top: 10px;
+    background-color: white;
 }
 
 .answers {
     text-align: left;
-    padding-left: 30px;
+    padding-left: 60px;
+}
+
+#head {
+    background-color: floralwhite;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }

@@ -13,21 +13,21 @@ export class QuizComponent implements OnInit {
   constructor(private problemService:ProblemService, private router:Router, private route: ActivatedRoute) { }
 
   problems: Problem[]
+  static score: number
 
   ngOnInit(): void {
     this.problemService.loadProblemDetails().subscribe(data=>this.problems=data);
   }
 
   gradeQuiz(): void{
-    var correct = 0
+    QuizComponent.score = 0
     var choices = document.getElementsByTagName("input")
     for (var i = 0; i < this.problems.length; i++) {
       for (var j = i * 4; j < (i * 4) + 4; j++) {
         if (choices[j].checked && choices[j].value == this.problems[i]["answer"])
-          correct++;
+          QuizComponent.score++;
       }
     }
-    console.log(correct + "/10  correct!")
     this.router.navigate(["/result"], { relativeTo: this.route });
   }
 }
